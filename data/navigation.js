@@ -1,0 +1,104 @@
+export const mainNav = [
+  { label: 'Home', href: '/#top' },
+  {
+    label: 'Super Visa',
+    href: '/services/super-visa',
+    children: [
+      { label: 'Super Visa Overview', href: '/services/super-visa', icon: 'family' },
+      { label: 'Eligibility Checklist', href: '/services/super-visa-eligibility-checklist', icon: 'check' },
+      { label: 'Income Requirement', href: '/services/super-visa-income-requirement', icon: 'wallet' },
+      { label: 'Invitation Letter Guide', href: '/services/super-visa-invitation-letter', icon: 'file' },
+      { label: 'Medical Exam Guide', href: '/services/super-visa-medical-exam', icon: 'badge' },
+      { label: 'Insurance Requirements', href: '/services/super-visa-insurance-guide', icon: 'shield' },
+      { label: 'Monthly Payment Insurance', href: '/services/super-visa-insurance-monthly', icon: 'clock' },
+      { label: 'Extension Guide', href: '/services/super-visa-extension', icon: 'bell' },
+      { label: 'Refusal Reasons & Fixes', href: '/services/super-visa-refusal-reasons', icon: 'eye' },
+      { label: 'Super Visa vs Visitor Visa', href: '/services/super-visa-vs-visitor-visa', icon: 'route' },
+    ],
+  },
+  { label: 'Visitor Visa', href: '/services/visitor-visa' },
+  {
+    label: 'Study',
+    href: '/services/study-permit',
+    children: [
+      { label: 'Study Permit', href: '/services/study-permit', desc: 'Study plan, funds, DLI acceptance', icon: 'graduation' },
+      { label: 'Post-Graduation Work Permit', href: '/services/pgwp', desc: 'PGWP deadlines and eligibility', icon: 'bolt' },
+    ],
+  },
+  {
+    label: 'Work',
+    href: '/services/work-permit',
+    children: [
+      { label: 'All Work Permits', href: '/services/work-permit', icon: 'route' },
+      { label: 'Closed Work Permit (LMIA)', href: '/services/lmia-work-permit', icon: 'briefcase' },
+      { label: 'LMIA Services', href: '/services/lmia-services', icon: 'file' },
+      { label: 'Post-Graduation Work Permit', href: '/services/pgwp', icon: 'graduation' },
+      { label: 'Spouse Open Work Permit', href: '/services/spouse-open-work-permit', icon: 'heart' },
+      { label: 'Bridging Open Work Permit', href: '/services/bridging-open-work-permit', icon: 'clock' },
+      { label: 'Global Talent Stream', href: '/services/global-talent-stream', icon: 'bolt' },
+      { label: 'Francophone Mobility', href: '/services/francophone-mobility', icon: 'quote' },
+      { label: 'International Experience Canada', href: '/services/international-experience-canada', icon: 'plane' },
+      { label: 'Caregiver Program', href: '/services/caregiver-program', icon: 'family' },
+      { label: 'Vulnerable Worker Permit', href: '/services/vulnerable-open-work-permit', icon: 'shield' },
+      { label: 'C10 Work Permit', href: '/services/c10-work-permit', icon: 'trophy' },
+      { label: 'C11 Work Permit', href: '/services/c11-work-permit', icon: 'building' },
+    ],
+  },
+  {
+    label: 'Permanent Residence',
+    href: '/services/permanent-residence',
+    children: [
+      { label: 'Permanent Residence', href: '/services/permanent-residence', desc: 'Compare every PR route', icon: 'maple' },
+      { label: 'Express Entry', href: '/services/express-entry', desc: 'CRS score and federal programs', icon: 'bolt' },
+      { label: 'Provincial Nominee Program', href: '/services/provincial-nominee-program', desc: 'Provincial nomination streams', icon: 'building' },
+      { label: 'Family Sponsorship', href: '/services/family-sponsorship', desc: 'Parents, children, relatives', icon: 'family' },
+      { label: 'Spousal Sponsorship', href: '/services/spousal-sponsorship', desc: 'Spouse, common-law, conjugal', icon: 'rings' },
+      { label: 'Canadian Citizenship', href: '/services/canadian-citizenship', desc: 'Residence days and readiness', icon: 'trophy' },
+    ],
+  },
+  {
+    label: 'Business',
+    href: '/services/business-visa',
+    children: [
+      { label: 'Business Visa', href: '/services/business-visa', desc: 'Find the right business stream', icon: 'briefcase' },
+      { label: 'Business Exploratory Visit', href: '/services/business-exploratory-visit', desc: 'Research before you invest', icon: 'eye' },
+      { label: 'Intra-Company Transfer', href: '/services/intra-company-transfer', desc: 'Move key staff into Canada', icon: 'route' },
+      { label: 'Self-Employed Program', href: '/services/self-employed-program', desc: 'Cultural and athletic profiles', icon: 'star' },
+    ],
+  },
+  {
+    label: 'More',
+    href: '/services',
+    children: [
+      { label: 'All Services', href: '/services', desc: 'Browse the full program directory', icon: 'route' },
+      { label: 'Additional Services', href: '/#additional-services', desc: 'ATIP, restoration, TRP, PR card & more', icon: 'file' },
+      { label: 'Refusal Support', href: '/#refusals', desc: 'Reapply after a refusal', icon: 'shield' },
+    ],
+  },
+  { label: 'Contact', href: '/#contact' },
+];
+
+export const footerLinks = {
+  quickLinks: [
+    { label: 'Home', href: '/#top' },
+    { label: 'All Services', href: '/services' },
+    { label: 'Why Choose Us', href: '/#why-us' },
+    { label: 'Our Process', href: '/#process' },
+    { label: 'Reviews', href: '/#reviews' },
+    { label: 'FAQ', href: '/#faq' },
+  ],
+  services: [
+    { label: 'Super Visa', href: '/services/super-visa' },
+    { label: 'Visitor Visa', href: '/services/visitor-visa' },
+    { label: 'Study Permit', href: '/services/study-permit' },
+    { label: 'Work Permits', href: '/services/work-permit' },
+    { label: 'Express Entry', href: '/services/express-entry' },
+    { label: 'Spousal Sponsorship', href: '/services/spousal-sponsorship' },
+    { label: 'Business Visa', href: '/services/business-visa' },
+    { label: 'Super Visa Refusals', href: '/services/super-visa-refusal-reasons' },
+  ],
+  legal: [
+    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Terms of Service', href: '/terms' },
+  ],
+};

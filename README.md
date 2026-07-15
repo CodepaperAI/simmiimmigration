@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Simmi Immigration — Next.js
 
-## Getting Started
+Premium Canadian immigration consulting website. Next.js (Pages Router), JavaScript, Tailwind CSS, Framer Motion.
 
-First, run the development server:
+## Run
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build && npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Folder | Purpose |
+| --- | --- |
+| `pages/` | Routes. `index.js` composes the full homepage. |
+| `components/layout/` | Header, sticky nav, mobile menu, footer, page layout. |
+| `components/home/` | Homepage sections (hero → contact). |
+| `components/ui/` | Reusable primitives: Button, Card, Icon, Accordion, Timeline, Field, forms. |
+| `components/common/` | Seo, ThemeToggle, Reveal. |
+| `context/` | ThemeContext — dark/light with localStorage persistence and no flash on load. |
+| `data/` | All business content: company, navigation, services, programs, FAQs, reviews, process. |
+| `seo/` | seo.config.js, buildMeta.js, schema.js (Organization, LocalBusiness, FAQ, Breadcrumb). |
+| `lib/motion.js` | Shared Framer Motion variants. |
+| `hooks/`, `utils/` | useScrolled, useLockBodyScroll, cn, validation. |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Editing content
 
-## Learn More
+Change text, services, FAQs or contact details in `data/` only — no component edits needed.
 
-To learn more about Next.js, take a look at the following resources:
+## Images
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Hero and section images load from Unsplash via `next/image` (allowed in `next.config.js`).
+For production, download the photos into `public/images/` and swap the `src` values to local paths,
+or add your own licensed photography.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Adding a page
 
-## Deploy on Vercel
+```jsx
+import Seo from '@/components/common/Seo';
+import Section from '@/components/ui/Section';
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+export default function SuperVisa() {
+  return (
+    <>
+      <Seo title="Super Visa Canada" description="..." path="/services/super-visa" />
+      <Section>...</Section>
+    </>
+  );
+}
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The layout, header, footer, theme and SEO helpers are inherited automatically.
+
+## Form
+
+`components/ui/ConsultationForm.jsx` validates client-side and currently simulates a submit.
+Point `handleSubmit` at an API route (`pages/api/contact.js`) or your CRM/email service.

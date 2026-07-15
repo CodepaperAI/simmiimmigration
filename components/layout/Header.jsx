@@ -95,19 +95,25 @@ export default function Header() {
   return (
     <>
       {/* Utility bar */}
-      <div className="hidden bg-ink-950 py-2 text-white lg:block">
+      <div className="hidden border-b border-ink-200 bg-ink-50 py-2 text-ink-700 transition-colors duration-500 dark:border-ink-800 dark:bg-ink-950 dark:text-white lg:block">
         <Container className="flex items-center justify-between text-xs">
-          <p className="flex items-center gap-2 text-white/70">
-            <Icon name="shield" className="h-4 w-4 text-maple-500" />
+          <p className="flex items-center gap-2 text-ink-600 dark:text-white/70">
+            <Icon name="shield" className="h-4 w-4 text-maple-600 dark:text-maple-500" />
             Regulated Canadian Immigration Consultant &middot; CICC member
           </p>
           <div className="flex items-center gap-6">
-            <a href={company.phoneHref} className="flex items-center gap-2 text-white/80 transition-colors hover:text-white">
-              <Icon name="phone" className="h-3.5 w-3.5 text-maple-500" />
+            <a
+              href={company.phoneHref}
+              className="flex items-center gap-2 text-ink-600 transition-colors hover:text-maple-600 dark:text-white/80 dark:hover:text-white"
+            >
+              <Icon name="phone" className="h-3.5 w-3.5 text-maple-600 dark:text-maple-500" />
               {company.phone}
             </a>
-            <a href={company.emailHref} className="flex items-center gap-2 text-white/80 transition-colors hover:text-white">
-              <Icon name="mail" className="h-3.5 w-3.5 text-maple-500" />
+            <a
+              href={company.emailHref}
+              className="flex items-center gap-2 text-ink-600 transition-colors hover:text-maple-600 dark:text-white/80 dark:hover:text-white"
+            >
+              <Icon name="mail" className="h-3.5 w-3.5 text-maple-600 dark:text-maple-500" />
               {company.email}
             </a>
           </div>

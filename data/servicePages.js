@@ -2620,6 +2620,6 @@ export const servicesByCategory = serviceSlugs.reduce((acc, slug) => {
   if (!acc[category]) acc[category] = [];
   acc[category].push({ slug, label: servicePages[slug].hero.eyebrow, href: `/services/${slug}` });
   return acc;
+  
 }, {});
-
 export default servicePages;

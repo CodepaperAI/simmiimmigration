@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Simmi Immigration">
+  <defs>
+    <linearGradient id="simmiRing" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#7E0A1D"/>
+      <stop offset="0.5" stop-color="#C8102E"/>
+      <stop offset="1" stop-color="#E23A4C"/>
+    </linearGradient>
+  </defs>
+  <!-- Orbit ring with a takeoff gap at the top-right (the journey) -->
+  <path d="M50 14 A24 24 0 1 0 54 34"
+        fill="none" stroke="url(#simmiRing)" stroke-width="5.5" stroke-linecap="round"/>
+  <!-- Spark breaking out of the orbit (momentum / arrival) -->
+  <path d="M50 14 l7 -2 -3 6 z" fill="#E23A4C"/>
+  <!-- Central maple leaf -->
+  <path fill="#C8102E" d="M32 15l-2.4 6.6-5-1.9 1.5 5.1-5 1.9 4.6 2.9-1.4 4.2 5.4-1.1L32 47l2.3-13.3 5.4 1.1-1.4-4.2 4.6-2.9-5-1.9 1.5-5.1-5 1.9z"/>
+</svg>

@@ -34,6 +34,7 @@ export default function StudyPermitPage() {
     faqSchema(faqs),
     breadcrumbSchema([
       { name: 'Home', path: '/' },
+      { name: 'Study', path: '/#programs' },
       { name: 'Study Permit', path: meta.path },
     ]),
   ];
@@ -44,6 +45,7 @@ export default function StudyPermitPage() {
 
       <ServiceHero
         eyebrow={hero.eyebrow}
+        breadcrumbs={[{ label: 'Study', href: '/#programs' }]}
         title={hero.title}
         titleAccent={hero.titleAccent}
         intro={hero.intro}

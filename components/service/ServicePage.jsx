@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { EASE, viewport } from '@/lib/motion';
 import { breadcrumbSchema, faqSchema, organizationSchema } from '@/seo/schema';
+import { categoryBreadcrumb } from '@/data/serviceCategories';
 import Seo from '@/components/common/Seo';
 import Reveal from '@/components/common/Reveal';
 import Section from '@/components/ui/Section';
@@ -24,14 +25,18 @@ export default function ServicePage({ slug, data }) {
     faqs = [],
     help,
     related = [],
+    category,
   } = data;
 
   const path = `/services/${slug}`;
+  const cat = categoryBreadcrumb[category];
+  const breadcrumbs = cat ? [cat] : [];
 
   const schemas = [
     organizationSchema(),
     breadcrumbSchema([
       { name: 'Home', path: '/' },
+      ...(cat ? [{ name: cat.label, path: cat.href }] : []),
       { name: hero.eyebrow, path },
     ]),
     ...(faqs.length ? [faqSchema(faqs)] : []),
@@ -281,6 +286,7 @@ export default function ServicePage({ slug, data }) {
         image={hero.image}
         imageAlt={hero.imageAlt}
         facts={quickFacts}
+        breadcrumbs={breadcrumbs}
       />
 
       {/* Only the sections this service actually has data for, striped by position */}

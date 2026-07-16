@@ -116,6 +116,20 @@ export default function Header() {
               <Icon name="mail" className="h-3.5 w-3.5 text-maple-600 dark:text-maple-500" />
               {company.email}
             </a>
+            <div className="flex items-center gap-3 border-l border-ink-200 pl-6 dark:border-ink-800">
+              {company.social.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.name}
+                  className="text-ink-500 transition-colors hover:text-maple-600 dark:text-white/60 dark:hover:text-white"
+                >
+                  <Icon name={item.icon} className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
           </div>
         </Container>
       </div>

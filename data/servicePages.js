@@ -2604,6 +2604,17 @@ const servicePages = {
 
 export const serviceSlugs = Object.keys(servicePages);
 
+// Category -> breadcrumb entry. The href is where "Home > [Category]" points.
+// Categories map to their nearest landing surface (the homepage program tabs
+// or the all-services directory).
+export const categoryBreadcrumb = {
+  'Work Permits': { label: 'Work', href: '/#programs' },
+  'Permanent Residence': { label: 'Permanent Residence', href: '/#permanent-residence' },
+  'Business Visa': { label: 'Business', href: '/#business-visa' },
+  'Super Visa Guides': { label: 'Super Visa', href: '/services/super-visa' },
+  'Additional Services': { label: 'Additional Services', href: '/#additional-services' },
+};
+
 export const servicesByCategory = serviceSlugs.reduce((acc, slug) => {
   const { category } = servicePages[slug];
   if (!acc[category]) acc[category] = [];

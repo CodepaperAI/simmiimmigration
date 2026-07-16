@@ -6,7 +6,7 @@ export default function Section({ id, className, containerClassName, children, m
     <section
       id={id}
       className={cn(
-        'scroll-mt-24 py-20 sm:py-24 lg:py-28',
+        'scroll-mt-24 py-6 sm:py-8',
         muted && 'bg-ink-50/60 dark:bg-ink-900/40',
         className
       )}

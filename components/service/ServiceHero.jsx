@@ -8,9 +8,17 @@ import Icon from '@/components/ui/Icon';
 
 const SKYLINE = 'https://images.unsplash.com/photo-1517935706615-2717063c2225?auto=format&fit=crop&w=2000&q=75';
 
-export default function ServiceHero({ eyebrow, title, titleAccent, intro, updated, image, imageAlt, facts = [] }) {
+export default function ServiceHero({ eyebrow, title, titleAccent, intro, updated, image, imageAlt, facts = [], crumb, breadcrumbs }) {
+  // Build the trail: always start at Home, then any provided crumbs, then the
+  // current page. If no `breadcrumbs` array is passed, fall back to a simple
+  // Home -> page trail (using crumb or eyebrow as the label).
+  const trail = [
+    { label: 'Home', href: '/' },
+    ...(breadcrumbs || []),
+    { label: crumb || eyebrow },
+  ];
   return (
-    <section className="relative overflow-hidden bg-white pb-20 pt-14 text-ink-900 transition-colors duration-500 dark:bg-ink-950 dark:text-white lg:pb-24 lg:pt-20">
+    <section className="relative overflow-hidden bg-white pb-6 pt-14 text-ink-900 transition-colors duration-500 dark:bg-ink-950 dark:text-white lg:pb-8 lg:pt-20">
       {/* Light backdrop */}
       <div className="absolute inset-0 transition-opacity duration-500 dark:opacity-0" aria-hidden="true">
         <Image src={SKYLINE} alt="" fill priority sizes="100vw" className="object-cover opacity-[0.08] grayscale" />
@@ -40,9 +48,23 @@ export default function ServiceHero({ eyebrow, title, titleAccent, intro, update
           aria-label="Breadcrumb"
           className="mb-8 flex items-center gap-2 text-xs font-semibold text-ink-400 dark:text-ink-400"
         >
-          <a href="/" className="transition-colors hover:text-maple-600">Home</a>
-          <Icon name="chevron" className="h-3.5 w-3.5 -rotate-90" strokeWidth={2.2} />
-          <span className="text-ink-700 dark:text-ink-200">{title}</span>
+          {trail.map((item, index) => {
+            const isLast = index === trail.length - 1;
+            return (
+              <span key={item.label} className="flex items-center gap-2">
+                {item.href && !isLast ? (
+                  <a href={item.href} className="whitespace-nowrap transition-colors hover:text-maple-600">
+                    {item.label}
+                  </a>
+                ) : (
+                  <span className={isLast ? 'whitespace-nowrap text-ink-700 dark:text-ink-200' : 'whitespace-nowrap'}>
+                    {item.label}
+                  </span>
+                )}
+                {!isLast && <Icon name="chevron" className="h-3.5 w-3.5 -rotate-90 text-ink-300" strokeWidth={2.2} />}
+              </span>
+            );
+          })}
         </motion.nav>
 
         <div className="grid items-center gap-14 lg:grid-cols-12">
@@ -107,7 +129,7 @@ export default function ServiceHero({ eyebrow, title, titleAccent, intro, update
             variants={stagger(0.08, 0.5)}
             initial="hidden"
             animate="show"
-            className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-ink-200/80 bg-ink-200/70 dark:border-white/10 dark:bg-white/10 lg:grid-cols-4"
+            className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-ink-200/80 bg-ink-200/70 dark:border-white/10 dark:bg-white/10 lg:grid-cols-4"
           >
             {facts.map((fact) => (
               <motion.div key={fact.label} variants={fadeUp} className="bg-white/85 px-6 py-7 backdrop-blur dark:bg-ink-950/80">

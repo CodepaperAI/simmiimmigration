@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import company from '@/data/company';
-import { trustBadges } from '@/data/credentials';
 import { EASE, fadeUp, stagger } from '@/lib/motion';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
@@ -60,17 +59,26 @@ export default function Hero() {
             </motion.div>
 
             <motion.h1 variants={fadeUp} className="mt-7 text-display-xl text-ink-950 dark:text-white">
-              Your Canada plan,
-              <span className="block text-gradient">built to be approved.</span>
+              Refused a visa?
+              <span className="block text-gradient">We turn setbacks into approvals.</span>
             </motion.h1>
+
+            <motion.div variants={fadeUp} className="mt-6 space-y-1.5">
+              {['Refused a visa?', 'Delayed application?', 'Denied entry to Canada?'].map((line) => (
+                <p key={line} className="font-display text-lg font-bold text-ink-800 dark:text-white/90">
+                  {line}
+                </p>
+              ))}
+            </motion.div>
 
             <motion.p
               variants={fadeUp}
-              className="mt-7 max-w-xl text-lg leading-relaxed text-ink-600 dark:text-white/70"
+              className="mt-6 max-w-xl text-lg leading-relaxed text-ink-600 dark:text-white/70"
             >
-              Super Visa, study, work, sponsorship and permanent residence &mdash; prepared by a regulated
-              consultant who tells you what is realistic, then builds the file to prove it. Including
-              cases that were refused before.
+              We specialise in turning immigration challenges into success stories &mdash; strategic,
+              personalised guidance for individuals facing complex issues, so you move forward with a
+              clear plan. Super Visa, study, work, sponsorship and permanent residence, prepared by a
+              regulated consultant who tells you what is realistic, then builds the file to prove it.
             </motion.p>
 
             <motion.div variants={fadeUp} className="mt-9 flex flex-wrap gap-4">
@@ -83,7 +91,11 @@ export default function Hero() {
             </motion.div>
 
             <motion.ul variants={fadeUp} className="mt-9 flex flex-wrap gap-x-7 gap-y-3">
-              {trustBadges.map((badge) => (
+              {[
+                'Regulated and trusted expert support',
+                'Tailored solutions for your unique case',
+                'Support for complex or previously refused cases',
+              ].map((badge) => (
                 <li key={badge} className="flex items-center gap-2 text-sm text-ink-500 dark:text-white/60">
                   <Icon name="check" className="h-4 w-4 text-maple-600 dark:text-maple-500" strokeWidth={2.4} />
                   {badge}

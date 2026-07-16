@@ -16,8 +16,8 @@ export default function Document() {
     <Html lang="en-CA">
       <Head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" type="image/png" href="/logos/simmi-mark.png" />
-        <link rel="apple-touch-icon" href="/logos/simmi-mark.png" />
+        <link rel="icon" type="image/svg+xml" href="/logos/simmi-icon.svg" />
+        <link rel="apple-touch-icon" href="/logos/simmi-icon.svg" />
         <meta name="theme-color" content="#C8102E" />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </Head>

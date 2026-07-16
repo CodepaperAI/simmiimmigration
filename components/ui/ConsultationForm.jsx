@@ -8,10 +8,15 @@ import { validateContactForm } from '@/utils/validation';
 
 const initialValues = { name: '', email: '', phone: '', service: '', message: '' };
 
+// Your Google Apps Script Web App URL. Set NEXT_PUBLIC_SHEET_ENDPOINT in
+// .env.local (see the setup steps). Falls back to empty = simulated submit.
+const SHEET_ENDPOINT = process.env.NEXT_PUBLIC_SHEET_ENDPOINT || '';
+
 export default function ConsultationForm() {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState('idle');
+  const [status, setStatus] = useState('idle'); // idle | sending | sent | error
+  const [hp, setHp] = useState(''); // honeypot (spam trap) — real users leave blank
 
   const update = (key) => (event) => {
     setValues((prev) => ({ ...prev, [key]: event.target.value }));
@@ -20,17 +25,48 @@ export default function ConsultationForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // Bot filled the hidden field → silently pretend success, store nothing.
+    if (hp) {
+      setStatus('sent');
+      setValues(initialValues);
+      return;
+    }
+
     const nextErrors = validateContactForm(values);
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) {
       setStatus('idle');
       return;
     }
+
     setStatus('sending');
-    // Replace with your API route or CRM endpoint.
-    await new Promise((resolve) => setTimeout(resolve, 900));
-    setStatus('sent');
-    setValues(initialValues);
+
+    try {
+      if (SHEET_ENDPOINT) {
+        // Apps Script accepts a simple POST. We send form-encoded data and use
+        // no-cors so the browser doesn't block the cross-origin request; the
+        // script still receives and stores everything.
+        const body = new URLSearchParams({
+          ...values,
+          page: typeof window !== 'undefined' ? window.location.pathname : '',
+          submittedAt: new Date().toISOString(),
+        });
+        await fetch(SHEET_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body,
+        });
+      } else {
+        // No endpoint configured yet — simulate so the UI still works in dev.
+        await new Promise((resolve) => setTimeout(resolve, 800));
+      }
+      setStatus('sent');
+      setValues(initialValues);
+    } catch (err) {
+      setStatus('error');
+    }
   };
 
   if (status === 'sent') {
@@ -45,8 +81,7 @@ export default function ConsultationForm() {
         </span>
         <h3 className="mt-6 text-2xl">Request received</h3>
         <p className="mt-3 max-w-sm text-sm leading-relaxed text-ink-500 dark:text-ink-300">
-          A consultant will call you within one business day to confirm your appointment. Check your
-          inbox for the confirmation.
+          A consultant will call you within one business day to confirm your appointment.
         </p>
         <Button variant="outline" size="sm" className="mt-7" onClick={() => setStatus('idle')}>
           Send another request
@@ -92,6 +127,26 @@ export default function ConsultationForm() {
           required
         />
       </div>
+
+      {/* Honeypot: hidden from humans, tempting to bots. Leave empty. */}
+      <div className="absolute left-[-9999px]" aria-hidden="true">
+        <label htmlFor="company_website">Company website</label>
+        <input
+          id="company_website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={hp}
+          onChange={(e) => setHp(e.target.value)}
+        />
+      </div>
+
+      {status === 'error' && (
+        <p className="mt-5 flex items-center gap-2 rounded-xl border border-maple-200 bg-maple-50 px-4 py-3 text-sm text-maple-700 dark:border-maple-900/60 dark:bg-maple-950/30 dark:text-maple-300">
+          <Icon name="shield" className="h-4 w-4 shrink-0" />
+          Something went wrong sending your request. Please try again, or call us directly.
+        </p>
+      )}
 
       <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="flex items-center gap-2 text-xs text-ink-400">

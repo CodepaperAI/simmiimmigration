@@ -13,7 +13,7 @@ import Container from '@/components/ui/Container';
 import Icon from '@/components/ui/Icon';
 
 const linkClass =
-  'relative flex items-center gap-1 whitespace-nowrap rounded-full px-3.5 py-2 text-[13px] font-semibold text-ink-600 transition-colors hover:bg-white hover:text-maple-600 hover:shadow-sm dark:text-ink-300 dark:hover:bg-ink-800 dark:hover:text-white';
+  'group relative flex items-center gap-1 whitespace-nowrap px-3.5 py-2 text-sm font-semibold text-navy-800 transition-colors hover:text-red-600 dark:text-ink-200 dark:hover:text-red-400 after:absolute after:bottom-0.5 after:left-3.5 after:right-3.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-red-600 after:transition-transform after:duration-300 hover:after:scale-x-100';
 
 function NavDropdown({ item }) {
   const [open, setOpen] = useState(false);
@@ -95,28 +95,23 @@ export default function Header() {
   return (
     <>
       {/* Utility bar */}
-      <div className="hidden border-b border-ink-200 bg-ink-50 py-2 text-ink-700 transition-colors duration-500 dark:border-ink-800 dark:bg-ink-950 dark:text-white lg:block">
+      <div className="hidden bg-red-gradient py-2.5 text-white lg:block">
         <Container className="flex items-center justify-between text-xs">
-          <p className="flex items-center gap-2 text-ink-600 dark:text-white/70">
-            <Icon name="shield" className="h-4 w-4 text-maple-600 dark:text-maple-500" />
-            Regulated Canadian Immigration Consultant &middot; CICC member
-          </p>
-          <div className="flex items-center gap-6">
-            <a
-              href={company.phoneHref}
-              className="flex items-center gap-2 text-ink-600 transition-colors hover:text-maple-600 dark:text-white/80 dark:hover:text-white"
-            >
-              <Icon name="phone" className="h-3.5 w-3.5 text-maple-600 dark:text-maple-500" />
+          <div className="flex items-center gap-5 font-semibold">
+            <a href={company.phoneHref} className="flex items-center gap-2 transition-opacity hover:opacity-80">
+              <Icon name="phone" className="h-3.5 w-3.5" />
               {company.phone}
             </a>
-            <a
-              href={company.emailHref}
-              className="flex items-center gap-2 text-ink-600 transition-colors hover:text-maple-600 dark:text-white/80 dark:hover:text-white"
-            >
-              <Icon name="mail" className="h-3.5 w-3.5 text-maple-600 dark:text-maple-500" />
+            <span className="text-white/40">|</span>
+            <a href={company.emailHref} className="flex items-center gap-2 transition-opacity hover:opacity-80">
+              <Icon name="mail" className="h-3.5 w-3.5" />
               {company.email}
             </a>
-            <div className="flex items-center gap-3 border-l border-ink-200 pl-6 dark:border-ink-800">
+          </div>
+          <div className="flex items-center gap-5">
+            <span className="font-semibold">Mon–Fri: 9:00 AM - 6:00 PM</span>
+            <a href="/#contact" className="font-semibold transition-opacity hover:opacity-80">Free Assessment</a>
+            <div className="flex items-center gap-3 border-l border-white/25 pl-5">
               {company.social.map((item) => (
                 <a
                   key={item.name}
@@ -124,7 +119,7 @@ export default function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={item.name}
-                  className="text-ink-500 transition-colors hover:text-maple-600 dark:text-white/60 dark:hover:text-white"
+                  className="transition-opacity hover:opacity-70"
                 >
                   <Icon name={item.icon} className="h-4 w-4" />
                 </a>
@@ -133,16 +128,16 @@ export default function Header() {
           </div>
         </Container>
       </div>
-
+          
       <motion.header
-        initial={{ y: -24, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
         className={cn(
           'sticky top-0 z-40 w-full border-b transition-all duration-500',
           scrolled
-            ? 'border-ink-200/70 bg-white/85 shadow-soft backdrop-blur-xl dark:border-ink-800/80 dark:bg-ink-950/85'
-            : 'border-transparent bg-white/70 backdrop-blur-md dark:bg-ink-950/60'
+            ? 'border-ink-200 bg-white shadow-soft dark:border-navy-800 dark:bg-navy-950'
+            : 'border-ink-100 bg-white dark:border-navy-900 dark:bg-navy-950'
         )}
       >
         <Container
@@ -155,7 +150,7 @@ export default function Header() {
 
           {/* Desktop nav — pill container, nothing wraps */}
           <nav
-            className="hidden items-center gap-0.5 rounded-full border border-ink-200/70 bg-ink-50/70 p-1 shadow-sm dark:border-ink-800 dark:bg-ink-900/60 xl:flex"
+            className="hidden items-center gap-1 xl:flex"
             aria-label="Primary"
           >
             {mainNav.map((item) =>

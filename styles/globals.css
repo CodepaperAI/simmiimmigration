@@ -13,23 +13,23 @@
   }
 
   body {
-    @apply bg-white text-ink-800 antialiased transition-colors duration-500;
-    @apply dark:bg-ink-950 dark:text-ink-100;
+    @apply bg-white text-ink-700 antialiased transition-colors duration-500;
+    @apply dark:bg-navy-950 dark:text-ink-100;
   }
 
   h1, h2, h3, h4 {
-    @apply font-display font-extrabold text-ink-900 dark:text-white;
+    @apply font-display font-extrabold text-navy-900 dark:text-white;
     text-wrap: balance;
   }
 
   p { text-wrap: pretty; }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-maple-600 ring-offset-2 ring-offset-white dark:ring-offset-ink-950 rounded-md;
+    @apply outline-none ring-2 ring-red-600 ring-offset-2 ring-offset-white dark:ring-offset-navy-950 rounded-md;
   }
 
   ::selection {
-    @apply bg-maple-600 text-white;
+    @apply bg-red-600 text-white;
   }
 }
 
@@ -39,14 +39,19 @@
   }
 
   .text-gradient {
-    @apply bg-maple-gradient bg-clip-text text-transparent;
+    @apply bg-red-gradient bg-clip-text text-transparent;
+  }
+
+  /* Friendly honey pill used for small accents/badges. */
+  .chip-warm {
+    @apply rounded-full bg-sun-100 px-3 py-1 text-xs font-bold text-sun-700 dark:bg-sun-900/30 dark:text-sun-300;
   }
 }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { @apply bg-transparent; }
 ::-webkit-scrollbar-thumb { @apply rounded-full bg-ink-300 dark:bg-ink-700; }
-::-webkit-scrollbar-thumb:hover { @apply bg-maple-600; }
+::-webkit-scrollbar-thumb:hover { @apply bg-red-600; }
 
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

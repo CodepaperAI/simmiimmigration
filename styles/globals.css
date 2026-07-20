@@ -10,9 +10,12 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 96px;
+    overflow-x: hidden;
   }
 
   body {
+    overflow-x: hidden;
+    max-width: 100%;
     @apply bg-white text-ink-700 antialiased transition-colors duration-500;
     @apply dark:bg-navy-950 dark:text-ink-100;
   }

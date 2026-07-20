@@ -6,7 +6,6 @@ import Button from '@/components/ui/Button';
 import Icon from '@/components/ui/Icon';
 import { fadeUp, scaleIn, stagger, viewport } from '@/lib/motion';
 
-const questions = ['Refused a visa?', 'Delayed application?', 'Denied entry to Canada?'];
 
 const features = [
   'Regulated and trusted expert support',
@@ -25,7 +24,7 @@ export default function ComplexCases() {
               alt="Consultant and client reviewing a refused immigration file together"
               width={1200}
               height={900}
-              className="h-[26rem] w-full object-cover"
+              className="h-64 w-full object-cover sm:h-80 lg:h-[26rem]"
             />
           </div>
           <motion.div
@@ -48,18 +47,14 @@ export default function ComplexCases() {
             <Badge icon="shield">Complex Case Support</Badge>
           </motion.div>
 
-          <motion.ul variants={fadeUp} className="mt-7 space-y-2">
-            {questions.map((question) => (
-              <li key={question} className="font-display text-display-md text-ink-900 dark:text-white">
-                {question}
-              </li>
-            ))}
-          </motion.ul>
+          <motion.h2 variants={fadeUp} className="mt-7 font-display text-display-lg text-ink-900 dark:text-white">
+            Your Canada plan, built to be approved.
+          </motion.h2>
 
           <motion.p variants={fadeUp} className="mt-6 text-lg leading-relaxed text-ink-500 dark:text-ink-300">
-            We specialise in turning immigration challenges into success stories. Our team offers
-            strategic, personalised guidance for individuals facing complex immigration issues,
-            helping clients move forward with a clear plan.
+            Super Visa, study, work, sponsorship and permanent residence &mdash; prepared by a
+            regulated consultant who tells you what is realistic, then builds the file to prove it.
+            Including cases that were refused before.
           </motion.p>
 
           <motion.ul variants={stagger(0.08)} className="mt-8 space-y-3.5">

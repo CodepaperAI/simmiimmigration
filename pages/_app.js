@@ -1,9 +1,12 @@
+import Head from 'next/head';
 import { Plus_Jakarta_Sans, Inter } from 'next/font/google';
 import { AnimatePresence } from 'framer-motion';
 import { ThemeProvider } from '@/context/ThemeContext';
 import Layout from '@/components/layout/Layout';
 import '@/styles/globals.css';
-
+<Head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+</Head>
 const display = Plus_Jakarta_Sans({
   subsets: ['latin'],
   weight: ['600', '700', '800'],
@@ -20,6 +23,11 @@ const body = Inter({
 export default function App({ Component, pageProps, router }) {
   return (
     <ThemeProvider>
+      {/* Required for the site to scale correctly on phones. Without this,
+          mobile browsers render at ~980px wide and clip the layout. */}
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+      </Head>
       <div className={`${display.variable} ${body.variable} font-sans`}>
         <Layout>
           <AnimatePresence mode="wait">

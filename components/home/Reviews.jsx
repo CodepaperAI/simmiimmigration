@@ -67,7 +67,7 @@ export default function Reviews() {
 
       <div
         ref={trackRef}
-        className="no-scrollbar -mx-5 mt-14 flex snap-x snap-mandatory gap-6 overflow-x-auto px-5 pb-4 sm:mx-0 sm:px-0"
+        className="no-scrollbar mt-14 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4"
       >
         {testimonials.map((review) => (
           <ReviewCard key={review.name} review={review} />

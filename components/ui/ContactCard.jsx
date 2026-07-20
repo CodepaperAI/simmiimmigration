@@ -18,7 +18,7 @@ export default function ContactCard({ icon, label, value, href, hint, className 
       </span>
       <span className="min-w-0">
         <span className="block text-xs font-semibold uppercase tracking-wider text-ink-400">{label}</span>
-        <span className="mt-1 block truncate font-semibold text-ink-900 dark:text-white">{value}</span>
+        <span className="mt-1 block break-words font-semibold text-ink-900 dark:text-white">{value}</span>
         {hint && <span className="mt-0.5 block text-xs text-ink-500 dark:text-ink-400">{hint}</span>}
       </span>
     </Wrapper>

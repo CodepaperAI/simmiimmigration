@@ -18,16 +18,16 @@ export default function Logo({ className }) {
       className={cn('group inline-flex items-center', className)}
       aria-label={`${company.name} home`}
     >
-      <img
-        src="/logos/simmi-logo-light.png"
-        alt={company.name}
-        className="h-10 w-auto transition-transform duration-300 group-hover:scale-[1.03] dark:hidden sm:h-11"
-      />
-      <img
-        src="/logos/simmi-logo-dark.png"
-        alt={company.name}
-        className="hidden h-10 w-auto transition-transform duration-300 group-hover:scale-[1.03] dark:block sm:h-11"
-      />
+   <img
+  src="/logos/simmi-logo-light.png"
+  alt={company.name}
+  className="h-12 w-auto transition-transform duration-300 group-hover:scale-[1.03] dark:hidden sm:h-16"
+/>
+<img
+  src="/logos/simmi-logo-dark.png"
+  alt={company.name}
+  className="hidden h-12 w-auto transition-transform duration-300 group-hover:scale-[1.03] dark:block sm:h-16"
+/>
     </Link>
   );
 }

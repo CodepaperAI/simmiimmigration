@@ -22,17 +22,34 @@ module.exports = {
           400: '#F4737E', 500: '#EA4453', 600: '#D22536', 700: '#B01B2A',
           800: '#921A27', 900: '#7A1A25',
         },
-        // NAVY — brand dark / hero overlay / headings
+        // NAVY — anchored on #002365 (rgb 0 35 101). Used for headings, dark text, hero overlay.
         navy: {
-          50: '#EEF2F8', 100: '#D8E1EF', 200: '#B3C4DE', 300: '#849FC8',
-          400: '#5677AC', 500: '#3A5A90', 600: '#2C4676', 700: '#243A61',
-          800: '#1B2C4A', 900: '#132038', 950: '#0C1526',
+          50: '#E6EBF2',
+          100: '#C0CDDE',
+          200: '#93A8C6',
+          300: '#6480A8',
+          400: '#3D5C8A',
+          500: '#1B3B6E',
+          600: '#0A2A5C',
+          700: '#002365',
+          800: '#002365',
+          900: '#002365',
+          950: '#001238',
         },
-        // Neutral ink (cool grey to match navy)
+        // Neutral ink — light shades (50-300) stay neutral for backgrounds/borders.
+        // Text shades (400-950) resolve to the #002365 navy family so all body text is navy.
         ink: {
-          50: '#F7F8FA', 100: '#EEF1F5', 200: '#DFE4EC', 300: '#C3CBD8',
-          400: '#8C97A8', 500: '#5F6B7E', 600: '#45505F', 700: '#333B47',
-          800: '#232932', 900: '#161B22', 950: '#0D1117',
+          50: '#F7F8FA',
+          100: '#EEF1F5',
+          200: '#DFE4EC',
+          300: '#C3CBD8',
+          400: '#3D5C8A',
+          500: '#1B3B6E',
+          600: '#0A2A5C',
+          700: '#002365',
+          800: '#002365',
+          900: '#002365',
+          950: '#001238',
         },
       },
       fontFamily: {
@@ -47,14 +64,14 @@ module.exports = {
       },
       borderRadius: { xl: '0.75rem', '2xl': '1rem', '3xl': '1.5rem', '4xl': '2rem' },
       boxShadow: {
-        soft: '0 1px 3px rgba(19,32,56,0.06), 0 10px 28px -12px rgba(19,32,56,0.16)',
-        lift: '0 24px 60px -24px rgba(19,32,56,0.32), 0 10px 24px -14px rgba(19,32,56,0.20)',
+        soft: '0 1px 3px rgba(0,35,101,0.06), 0 10px 28px -12px rgba(0,35,101,0.16)',
+        lift: '0 24px 60px -24px rgba(0,35,101,0.32), 0 10px 24px -14px rgba(0,35,101,0.20)',
         glow: '0 0 0 1px rgba(210,37,54,0.10), 0 20px 50px -20px rgba(210,37,54,0.30)',
       },
       backgroundImage: {
         'maple-gradient': 'linear-gradient(135deg, #EA4453 0%, #D22536 55%, #B01B2A 100%)',
         'red-gradient': 'linear-gradient(135deg, #EA4453 0%, #D22536 55%, #B01B2A 100%)',
-        'navy-gradient': 'linear-gradient(160deg, #1B2C4A 0%, #0C1526 100%)',
+        'navy-gradient': 'linear-gradient(160deg, #002365 0%, #001238 100%)',
         'soft-red': 'linear-gradient(135deg, rgba(210,37,54,0.08) 0%, rgba(210,37,54,0.03) 100%)',
       },
       keyframes: {

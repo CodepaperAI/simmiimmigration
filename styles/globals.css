@@ -4,7 +4,7 @@
 
 @layer base {
   * {
-    @apply border-ink-200 dark:border-ink-800;
+    border-color: theme('colors.ink.200');
   }
 
   html {
@@ -16,15 +16,13 @@
   body {
     overflow-x: clip;
     max-width: 100%;
-    @apply bg-white text-ink-700 antialiased transition-colors duration-500;
+    @apply bg-white text-navy-800 antialiased transition-colors duration-500;
     @apply dark:bg-navy-950 dark:text-ink-100;
   }
 
-  h1, h2, h3, h4 {
-    @apply font-display font-extrabold text-navy-900 dark:text-white;
-    text-wrap: balance;
-  }
-
+ h1, h2, h3, h4 {
+  @apply font-display font-extrabold text-navy-800 dark:text-white;
+ }
   p { text-wrap: pretty; }
 
   :focus-visible {
@@ -43,11 +41,6 @@
 
   .text-gradient {
     @apply bg-red-gradient bg-clip-text text-transparent;
-  }
-
-  /* Friendly honey pill used for small accents/badges. */
-  .chip-warm {
-    @apply rounded-full bg-sun-100 px-3 py-1 text-xs font-bold text-sun-700 dark:bg-sun-900/30 dark:text-sun-300;
   }
 }
 

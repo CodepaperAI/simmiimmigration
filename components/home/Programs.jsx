@@ -21,8 +21,6 @@ export default function Programs() {
     };
     syncFromHash();
     window.addEventListener('hashchange', syncFromHash);
-    // Clicking a link whose hash already matches the URL fires no hashchange
-    // event, so also listen for clicks on any anchor pointing at a category.
     const onClick = (event) => {
       const link = event.target.closest('a[href*="#"]');
       if (!link) return;
@@ -90,15 +88,15 @@ export default function Programs() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.45, ease: EASE }}
-            className="grid gap-8 lg:grid-cols-12"
+            className="grid items-stretch gap-8 lg:grid-cols-12"
           >
-            <div className="relative overflow-hidden rounded-3xl lg:col-span-5">
+            <div className="relative min-h-[20rem] overflow-hidden rounded-3xl lg:col-span-5">
               <Image
                 src={current.image}
                 alt={current.alt}
-                width={1200}
-                height={900}
-                className="h-72 w-full object-cover lg:h-full"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/30 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-7">
@@ -107,7 +105,7 @@ export default function Programs() {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-ink-200 bg-white p-7 dark:border-ink-800 dark:bg-ink-900 lg:col-span-7 sm:p-9">
+            <div className="flex flex-col rounded-3xl border border-ink-200 bg-white p-7 dark:border-ink-800 dark:bg-ink-900 lg:col-span-7 sm:p-9">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-maple-600">
                 {current.items.length} programs in this category
               </p>
@@ -131,7 +129,7 @@ export default function Programs() {
                 ))}
               </motion.ul>
 
-              <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-ink-200 pt-7 dark:border-ink-800">
+              <div className="mt-auto flex flex-wrap items-center gap-4 border-t border-ink-200 pt-7 dark:border-ink-800">
                 <Button href="#contact" withArrow>
                   Check my eligibility
                 </Button>
@@ -141,7 +139,6 @@ export default function Programs() {
           </motion.div>
         </AnimatePresence>
       </div>
-
     </Section>
   );
 }

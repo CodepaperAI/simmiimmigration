@@ -54,33 +54,25 @@ function NavDropdown({ item }) {
               wide ? 'w-[40rem]' : 'w-[23rem]'
             )}
           >
-            <div
-              className={cn(
-                'overflow-hidden rounded-2xl border border-ink-200/80 bg-white/95 p-2 shadow-lift backdrop-blur-xl dark:border-ink-800 dark:bg-ink-900/95',
-                wide && 'grid grid-cols-2 gap-1'
-              )}
-            >
-              {item.children.map((child) => (
-                <Link
-                  key={child.label}
-                  href={child.href}
-                  onClick={() => setOpen(false)}
-                  className="group flex items-start gap-3 rounded-xl px-3 py-3 transition-colors hover:bg-maple-50 dark:hover:bg-ink-800"
-                >
-                  <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-maple-gradient text-white">
-                    <Icon name={child.icon} className="h-4 w-4" strokeWidth={1.8} />
-                  </span>
-                  <span>
-                    <span className="block text-sm font-bold text-ink-900 transition-colors group-hover:text-maple-600 dark:text-white">
-                      {child.label}
-                    </span>
-                    {child.desc && (
-                      <span className="mt-0.5 block text-xs text-ink-500 dark:text-ink-400">{child.desc}</span>
-                    )}
-                  </span>
-                </Link>
-              ))}
-            </div>
+           <div className="w-64 overflow-hidden rounded-2xl border border-ink-200/80 bg-white/95 p-1.5 shadow-lift backdrop-blur-xl dark:border-ink-800 dark:bg-ink-900/95">
+  {item.children.map((child) => (
+    <Link
+      key={child.label}
+      href={child.href}
+      onClick={() => setOpen(false)}
+      className="group flex items-center gap-2.5 rounded-lg px-3 py-2 transition-colors hover:bg-maple-50 dark:hover:bg-ink-800"
+    >
+      <Icon
+        name={child.icon}
+        className="h-4 w-4 shrink-0 text-maple-600 transition-transform group-hover:translate-x-0.5 dark:text-maple-400"
+        strokeWidth={1.9}
+      />
+      <span className="text-sm font-semibold text-ink-800 transition-colors group-hover:text-maple-600 dark:text-ink-100 dark:group-hover:text-white">
+        {child.label}
+      </span>
+    </Link>
+  ))}
+</div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Section from '@/components/ui/Section';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -28,9 +29,21 @@ export default function Credentials() {
             variants={fadeUp}
             className="group relative overflow-hidden rounded-3xl border border-ink-200 bg-white p-7 text-center transition-all duration-300 hover:border-maple-200 hover:shadow-lift dark:border-ink-800 dark:bg-ink-900"
           >
-            <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-soft-red text-maple-600 transition-colors group-hover:bg-maple-gradient group-hover:text-white dark:text-maple-400">
-              <Icon name="badge" className="h-7 w-7" />
-            </span>
+            {item.logo ? (
+              <span className="mx-auto flex h-20 w-full items-center justify-center rounded-2xl bg-white p-2 dark:bg-white">
+                <Image
+                  src={item.logo}
+                  alt={item.name}
+                  width={180}
+                  height={72}
+                  className="h-full w-auto object-contain"
+                />
+              </span>
+            ) : (
+              <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-soft-red text-maple-600 transition-colors group-hover:bg-maple-gradient group-hover:text-white dark:text-maple-400">
+                <Icon name="badge" className="h-7 w-7" />
+              </span>
+            )}
             <p className="mt-5 font-display text-2xl font-extrabold tracking-tight text-ink-900 dark:text-white">
               {item.abbr}
             </p>

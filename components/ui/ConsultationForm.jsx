@@ -8,10 +8,6 @@ import { validateContactForm } from '@/utils/validation';
 
 const initialValues = { name: '', email: '', phone: '', service: '', message: '' };
 
-// Your Google Apps Script Web App URL. Set NEXT_PUBLIC_SHEET_ENDPOINT in
-// .env.local (see the setup steps). Falls back to empty = simulated submit.
-const SHEET_ENDPOINT = process.env.NEXT_PUBLIC_SHEET_ENDPOINT || '';
-
 export default function ConsultationForm() {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
@@ -26,7 +22,7 @@ export default function ConsultationForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Bot filled the hidden field → silently pretend success, store nothing.
+    // Bot filled the hidden field → silently pretend success, send nothing.
     if (hp) {
       setStatus('sent');
       setValues(initialValues);
@@ -43,27 +39,20 @@ export default function ConsultationForm() {
     setStatus('sending');
 
     try {
-      if (SHEET_ENDPOINT) {
-        // Apps Script accepts a simple POST. We send form-encoded data and use
-        // no-cors so the browser doesn't block the cross-origin request; the
-        // script still receives and stores everything.
-        const body = new URLSearchParams({
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
           ...values,
+          company_website: hp,
           page: typeof window !== 'undefined' ? window.location.pathname : '',
-          submittedAt: new Date().toISOString(),
-        });
-        await fetch(SHEET_ENDPOINT, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body,
-        });
-      } else {
-        // No endpoint configured yet — simulate so the UI still works in dev.
-        await new Promise((resolve) => setTimeout(resolve, 800));
-      }
+        }),
+      });
+
+      if (!res.ok) throw new Error('Request failed');
+
       setStatus('sent');
-      setValues(initialValues);
+      setValues(initialValues); // clear the form on success
     } catch (err) {
       setStatus('error');
     }

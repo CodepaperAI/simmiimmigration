@@ -13,7 +13,7 @@ export const programCategories = [
     blurb: 'Study at a designated learning institution and build a future here.',
     image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=70',
     alt: 'Students on a university campus',
-    items: ['Study Permit'],
+    items: ['Study Permit','Offshore Study Permit','Onshore Study Permit','Study Permit Extension'],
   },
   {
     id: 'employment',

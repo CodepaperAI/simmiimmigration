@@ -22,7 +22,9 @@ export const mainNav = [
     href: '/services/study-permit',
     children: [
       { label: 'Study Permit', href: '/services/study-permit', desc: 'Study plan, funds, DLI acceptance', icon: 'graduation' },
-      { label: 'Post-Graduation Work Permit', href: '/services/pgwp', desc: 'PGWP deadlines and eligibility', icon: 'bolt' },
+       { label: 'Offshore Study Permit', href: '/services/offshore-study-permit', desc: 'Applying from outside Canada', icon: 'graduation' },
+      { label: 'Onshore Study Permit', href: '/services/onshore-study-permit', desc: 'Change course, college or status', icon: 'graduation' },
+      { label: 'Study Permit Extension', href: '/services/study-permit-extension', desc: 'Extend your stay to keep studying', icon: 'graduation' },
     ],
   },
   {

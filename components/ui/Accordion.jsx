@@ -1,7 +1,6 @@
 import { useState, useId } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import cn from '@/utils/cn';
-import Icon from '@/components/ui/Icon';
 
 function AccordionItem({ item, isOpen, onToggle }) {
   const id = useId();
@@ -22,16 +21,14 @@ function AccordionItem({ item, isOpen, onToggle }) {
           aria-controls={`panel-${id}`}
           className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
         >
-          <span className="text-base font-semibold text-ink-900 dark:text-white">{item.question}</span>
+          <span className="text-base font-semibold text-navy-900 dark:text-white">{item.question}</span>
           <motion.span
-            animate={{ rotate: isOpen ? 180 : 0 }}
+            animate={{ rotate: isOpen ? 45 : 0 }}
             transition={{ duration: 0.3 }}
-            className={cn(
-              'flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors',
-              isOpen ? 'bg-maple-gradient text-white' : 'bg-white text-ink-500 dark:bg-ink-800 dark:text-ink-300'
-            )}
+            className="flex h-6 w-6 shrink-0 items-center justify-center text-2xl font-light leading-none text-red-600 dark:text-red-400"
+            aria-hidden="true"
           >
-            <Icon name="chevron" className="h-4 w-4" strokeWidth={2} />
+            +
           </motion.span>
         </button>
       </h3>

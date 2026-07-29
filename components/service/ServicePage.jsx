@@ -42,11 +42,6 @@ export default function ServicePage({ slug, data }) {
     ...(faqs.length ? [faqSchema(faqs)] : []),
   ];
 
-  /**
-   * Every section is optional. We build a list of only the ones that have data,
-   * then stripe the backgrounds by position — so a page that skips, say, the
-   * process section never ends up with two identical backgrounds side by side.
-   */
   const sections = [];
 
   if (prose.length > 0) {
@@ -54,13 +49,13 @@ export default function ServicePage({ slug, data }) {
       id: 'overview',
       render: (muted) => (
         <Section key="overview" id="overview" muted={muted}>
-          <div className="space-y-16">
+          <div className="space-y-14">
             {prose.map((block, index) => (
-              <div key={block.heading} className="grid gap-8 lg:grid-cols-12">
-                <div className="lg:col-span-4">
+              <div key={block.heading} className="grid items-start gap-x-12 gap-y-5 lg:grid-cols-2">
+                <div>
                   <SectionHeading eyebrow={index === 0 ? 'Overview' : undefined} title={block.heading} />
                 </div>
-                <Reveal className="space-y-5 lg:col-span-8">
+                <Reveal className="space-y-5">
                   {(block.paragraphs || []).map((text) => (
                     <p key={text.slice(0, 30)} className="text-[17px] leading-relaxed text-ink-600 dark:text-ink-300">
                       {text}
@@ -101,11 +96,9 @@ export default function ServicePage({ slug, data }) {
                     </span>
                     <h3 className="font-display text-xl font-bold text-ink-900 dark:text-white">{card.title}</h3>
                   </div>
-
                   {card.body && (
                     <p className="mt-5 text-[15px] leading-relaxed text-ink-500 dark:text-ink-300">{card.body}</p>
                   )}
-
                   {card.items && (
                     <ul className="mt-5 space-y-3">
                       {card.items.map((item) => (
@@ -260,13 +253,11 @@ export default function ServicePage({ slug, data }) {
       id: 'faq',
       render: (muted) => (
         <Section key="faq" id="faq" muted={muted}>
-          <div className="grid gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-4">
-              <SectionHeading eyebrow="Answers" title="Frequently asked questions" />
-            </div>
-            <div className="lg:col-span-8">
-              <Accordion items={faqs} allowMultiple />
-            </div>
+          <SectionHeading eyebrow="Answers" title="Frequently asked questions" />
+          <div className="mt-12 grid gap-x-8 gap-y-4 lg:grid-cols-2">
+            {faqs.map((item) => (
+              <Accordion key={item.q || item.question} items={[item]} allowMultiple />
+            ))}
           </div>
         </Section>
       ),
@@ -289,7 +280,6 @@ export default function ServicePage({ slug, data }) {
         breadcrumbs={breadcrumbs}
       />
 
-      {/* Only the sections this service actually has data for, striped by position */}
       {sections.map((section, index) => section.render(index % 2 === 1))}
 
       <ServiceCta help={help} related={related} />

@@ -26,9 +26,7 @@ export default function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-12">
           {/* Left */}
           <motion.div variants={stagger(0.1)} initial="hidden" animate="show" className="lg:col-span-7">
-            <motion.span variants={fadeUp} className="text-xs font-bold uppercase tracking-[0.22em] text-red-400">
-              Complex Case Support
-            </motion.span>
+           
 
             <motion.h1 variants={fadeUp} className="mt-4 font-display text-[clamp(1.75rem,6vw,3.4rem)] font-extrabold leading-[1.1] text-white">
               Refused a visa? Delayed application? Denied entry to Canada?

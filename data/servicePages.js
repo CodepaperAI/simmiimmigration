@@ -2599,7 +2599,212 @@ const servicePages = {
       { label: 'Visitor Visa', href: '/services/visitor-visa' },
     ],
   },
+'offshore-study-permit': {
+    category: 'Study',
+    meta: {
+      title: 'Offshore Study Permit — Applying From Outside Canada',
+      description:
+        'First-time study permit applications from outside Canada: letter of acceptance, proof of funds, GIC, tuition, and the provincial attestation letter.',
+      updated: 'June 2026',
+    },
+    hero: {
+      eyebrow: 'Offshore Study Permit',
+      title: 'Study in Canada.',
+      titleAccent: 'Apply from your home country.',
+      intro:
+        'An offshore study permit is for students applying from outside Canada for the first time. Simmi Immigration helps you assemble a complete package \u2014 acceptance, funds and study plan \u2014 that answers the officer\u2019s questions before they are asked.',
+      image: IMG.study,
+      imageAlt: 'International student preparing a study permit application from overseas',
+    },
+    quickFacts: [
+      { value: 'DLI letter', label: 'Acceptance from a designated institution', icon: 'graduation' },
+      { value: 'Proof of funds', label: 'GIC plus first-year tuition', icon: 'wallet' },
+      { value: 'PAL', label: 'Provincial attestation letter, if required', icon: 'file' },
+      { value: 'Study plan', label: 'Explain your program and goals', icon: 'target' },
+    ],
+    prose: [
+      {
+        heading: 'Overview',
+        paragraphs: [
+          'A first-time study permit application from outside Canada is assessed on three pillars: a genuine acceptance from a designated learning institution, clearly documented finances, and a study plan that connects your program to your background and goals.',
+          'The strongest offshore applications are consistent \u2014 the acceptance, the funds, the study plan and your history all tell the same story. Gaps or contradictions are among the most common reasons for a refusal.',
+        ],
+      },
+    ],
+    cards: [
+      {
+        title: 'What a first-time application needs',
+        icon: 'check',
+        items: [
+          'Letter of acceptance from a designated learning institution (DLI).',
+          'Proof of funds \u2014 typically a GIC plus first-year tuition.',
+          'Provincial attestation letter (PAL), where it is required.',
+          'A study plan explaining your program choice and career direction.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What proof of funds do I need for an offshore study permit?',
+        answer:
+          'Applicants typically show a Guaranteed Investment Certificate (GIC) plus evidence of first-year tuition and living costs. The funds should be documented and traceable.',
+      },
+      {
+        question: 'What is a provincial attestation letter (PAL)?',
+        answer:
+          'A PAL is a document from the province confirming your study permit application counts within its allocation. Most first-time applicants now need one, though some categories are exempt. Requirements can change, so confirm current rules before applying.',
+      },
+    ],
+    help: {
+      heading: 'Applying from outside Canada?',
+      paragraphs: [
+        'We review your acceptance, finances and study plan so your first-time application is complete and consistent before it is filed.',
+      ],
+      disclaimer: DISCLAIMER,
+    },
+    related: [
+      { label: 'Study Permit', href: '/services/study-permit' },
+      { label: 'Onshore Study Permit', href: '/services/onshore-study-permit' },
+    ],
+  },
 
+  'onshore-study-permit': {
+    category: 'Study',
+    meta: {
+      title: 'Onshore Study Permit — Applying From Inside Canada',
+      description:
+        'Already in Canada? Change course, college or status: visitor visa to study permit, DLI transfers, and work permit to study permit transitions.',
+      updated: 'June 2026',
+    },
+    hero: {
+      eyebrow: 'Onshore Study Permit',
+      title: 'Already in Canada?',
+      titleAccent: 'Change course, college or status.',
+      intro:
+        'An onshore study permit is for people who are already in Canada and want to start studying, change institutions, or move from another status into study. Simmi Immigration helps you switch cleanly, without a gap in status.',
+      image: IMG.study,
+      imageAlt: 'Student in Canada reviewing study options',
+    },
+    quickFacts: [
+      { value: 'From visitor', label: 'Visitor visa to study permit', icon: 'route' },
+      { value: 'DLI transfer', label: 'Change of institution', icon: 'graduation' },
+      { value: 'From work', label: 'Work permit to study permit', icon: 'briefcase' },
+      { value: 'Keep status', label: 'Apply before your current status ends', icon: 'shield' },
+    ],
+    prose: [
+      {
+        heading: 'Overview',
+        paragraphs: [
+          'If you are already in Canada, you may be able to apply for or change a study permit from inside the country \u2014 whether you are moving from visitor or worker status, or transferring between designated learning institutions.',
+          'Timing is everything onshore. Applying before your current status expires protects your ability to stay while a decision is made. A gap can force restoration, extra fees, or a departure from Canada.',
+        ],
+      },
+    ],
+    cards: [
+      {
+        title: 'Common onshore transitions',
+        icon: 'route',
+        items: [
+          'Visitor visa or visitor record to study permit.',
+          'Change of institution (DLI transfer).',
+          'Work permit to study permit.',
+          'Extending or amending an existing study permit.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Can I switch from a visitor visa to a study permit inside Canada?',
+        answer:
+          'In many cases yes, depending on your situation and current IRCC rules. Eligibility should be assessed individually, and the application should be filed before your current status expires.',
+      },
+      {
+        question: 'Can I change my college or university on a study permit?',
+        answer:
+          'You can transfer between designated learning institutions, but you must report the change and continue meeting the conditions of your permit. A new DLI acceptance is required.',
+      },
+    ],
+    help: {
+      heading: 'Changing status inside Canada?',
+      paragraphs: [
+        'We map your current status, the transition you want, and the timing \u2014 so you apply correctly and avoid a gap in status.',
+      ],
+      disclaimer: DISCLAIMER,
+    },
+    related: [
+      { label: 'Study Permit', href: '/services/study-permit' },
+      { label: 'Study Permit Extension', href: '/services/study-permit-extension' },
+    ],
+  },
+
+  'study-permit-extension': {
+    category: 'Study',
+    meta: {
+      title: 'Study Permit Extension in Canada',
+      description:
+        'Extend your study permit to continue your studies: renewal before expiry, restoration of status if expired, and updated DLI and funds proof.',
+      updated: 'June 2026',
+    },
+    hero: {
+      eyebrow: 'Study Permit Extension',
+      title: 'Continue your studies.',
+      titleAccent: 'Extend your stay with confidence.',
+      intro:
+        'A study permit extension lets you keep studying when your current permit is running short. Simmi Immigration helps you renew on time \u2014 or restore your status if the permit has already expired.',
+      image: IMG.study,
+      imageAlt: 'Student extending a Canadian study permit',
+    },
+    quickFacts: [
+      { value: 'Before expiry', label: 'Renew while your permit is valid', icon: 'clock' },
+      { value: 'Restoration', label: 'Options if status has expired', icon: 'shield' },
+      { value: 'New DLI letter', label: 'Proof of continued enrolment', icon: 'graduation' },
+      { value: 'Proof of funds', label: 'Show ongoing support', icon: 'wallet' },
+    ],
+    prose: [
+      {
+        heading: 'Overview',
+        paragraphs: [
+          'A study permit extension should be applied for before the current permit expires, with evidence of continued enrolment and sufficient funds. Applying on time lets you keep studying while the decision is made.',
+          'If your permit has already expired, you may be able to apply for restoration of status within a limited window, usually with additional fees. The sooner it is addressed, the more options you have.',
+        ],
+      },
+    ],
+    cards: [
+      {
+        title: 'What an extension needs',
+        icon: 'check',
+        items: [
+          'Application filed before the current permit expires.',
+          'Restoration of status if the permit has already expired.',
+          'A new DLI enrolment letter confirming continued study.',
+          'Updated proof of funds for tuition and living costs.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'When should I apply to extend my study permit?',
+        answer:
+          'Apply before your current permit expires \u2014 ideally well in advance \u2014 with proof of continued enrolment and sufficient funds. Filing on time preserves your ability to keep studying while the decision is pending.',
+      },
+      {
+        question: 'What if my study permit already expired?',
+        answer:
+          'You may be able to apply for restoration of status within a limited period after expiry, usually with additional fees. This should be addressed as quickly as possible.',
+      },
+    ],
+    help: {
+      heading: 'Need to extend your study permit?',
+      paragraphs: [
+        'We confirm your timing, prepare your enrolment and funds evidence, and file your extension \u2014 or restoration \u2014 correctly.',
+      ],
+      disclaimer: DISCLAIMER,
+    },
+    related: [
+      { label: 'Study Permit', href: '/services/study-permit' },
+      { label: 'Offshore Study Permit', href: '/services/offshore-study-permit' },
+    ],
+  },
 };
 
 export const serviceSlugs = Object.keys(servicePages);

@@ -27,19 +27,7 @@ export default function ComplexCases() {
               className="h-64 w-full object-cover sm:h-80 lg:h-[26rem]"
             />
           </div>
-          <motion.div
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -bottom-6 right-4 flex items-center gap-3 rounded-2xl border border-ink-200 bg-white p-4 shadow-lift dark:border-ink-800 dark:bg-ink-900 sm:right-8"
-          >
-            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-maple-gradient text-white">
-              <Icon name="file" className="h-5 w-5" />
-            </span>
-            <span>
-              <span className="block text-sm font-bold text-ink-900 dark:text-white">GCMS notes ordered</span>
-              <span className="block text-xs text-ink-500 dark:text-ink-400">We read the officer&rsquo;s real reasoning</span>
-            </span>
-          </motion.div>
+          
         </motion.div>
 
         <motion.div variants={stagger(0.1)} initial="hidden" whileInView="show" viewport={viewport} className="order-1 lg:order-2">

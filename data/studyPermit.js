@@ -154,6 +154,7 @@ const studyPermit = {
     disclaimer:
       'This page provides general information and is not legal advice. Program rules and financial requirements can change. Confirm current IRCC requirements before applying.',
   },
+  
 };
 
 export default studyPermit;

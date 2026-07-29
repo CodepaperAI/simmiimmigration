@@ -11,7 +11,7 @@ const MOUNTAINS =
 
 export default function FinalCta() {
   return (
-    <section className="relative overflow-hidden bg-white py-24 text-ink-900 transition-colors duration-500 dark:bg-ink-950 dark:text-white lg:py-32">
+    <section className="relative overflow-hidden bg-white py-24 text-ink-900 transition-colors duration-500 dark:bg-ink-950 dark:text-white lg:py-10">
       {/* Light-mode backdrop */}
       <div className="absolute inset-0 transition-opacity duration-500 dark:opacity-0" aria-hidden="true">
         <Image

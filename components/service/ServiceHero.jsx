@@ -104,12 +104,6 @@ export default function ServiceHero({
                   >
                     Free Assessment
                   </a>
-                  {updated && (
-                    <span className="flex items-center gap-2 text-xs font-semibold text-white/60">
-                      <Icon name="clock" className="h-4 w-4" />
-                      Last updated {updated}
-                    </span>
-                  )}
                 </motion.div>
               </motion.div>
             </div>

@@ -188,7 +188,7 @@ export default function ServicePage({ slug, data }) {
     });
   }
 
-  if (process.length > 0) {
+ if (process.length > 0) {
     sections.push({
       id: 'process',
       render: (muted) => (
@@ -202,9 +202,9 @@ export default function ServicePage({ slug, data }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={viewport}
                 transition={{ duration: 0.5, delay: (index % 3) * 0.08, ease: EASE }}
-                className="group relative overflow-hidden rounded-2xl border border-ink-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift dark:border-ink-800 dark:bg-ink-900"
+                className="group relative overflow-hidden rounded-2xl border border-ink-200 bg-white p-6 pr-16 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift dark:border-ink-800 dark:bg-ink-900"
               >
-                <span className="absolute right-4 top-3 font-display text-5xl font-extrabold text-ink-100 transition-colors group-hover:text-maple-100 dark:text-ink-800 dark:group-hover:text-maple-900/40">
+                <span className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-xl bg-maple-gradient font-display text-base font-extrabold text-white shadow-soft">
                   {index + 1}
                 </span>
                 <h3 className="relative font-display text-lg font-bold text-ink-900 dark:text-white">{step.title}</h3>
@@ -218,7 +218,6 @@ export default function ServicePage({ slug, data }) {
       ),
     });
   }
-
   if (why.length > 0) {
     sections.push({
       id: 'why-us',

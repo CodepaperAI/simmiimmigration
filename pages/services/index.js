@@ -5,11 +5,9 @@ import { fadeUp, stagger, viewport } from '@/lib/motion';
 import { breadcrumbSchema, organizationSchema } from '@/seo/schema';
 import Seo from '@/components/common/Seo';
 import Section from '@/components/ui/Section';
-import SectionHeading from '@/components/ui/SectionHeading';
 import Icon from '@/components/ui/Icon';
 import ServiceHero from '@/components/service/ServiceHero';
 
-/* The three hand-built pages are not in servicePages, so add them here. */
 const FEATURED = [
   {
     category: 'Visiting Family',
@@ -55,44 +53,54 @@ export default function ServicesIndex({ groups }) {
         imageAlt="Toronto skyline"
       />
 
-      {groups.map((group, groupIndex) => (
-        <Section key={group.category} muted={groupIndex % 2 === 1} id={group.category.toLowerCase().replace(/\s+/g, '-')}>
-          <SectionHeading eyebrow={`0${groupIndex + 1}`} title={group.category} />
+      <Section>
+        <motion.div
+  variants={stagger(0.06)}
+  initial="hidden"
+  whileInView="show"
+  viewport={viewport}
+  className="gap-6 lg:columns-2 [&>*]:mb-6 [&>*]:break-inside-avoid"
+>
+  {groups.map((group, groupIndex) => (
+    <motion.div
+      key={group.category}
+      variants={fadeUp}
+      className="rounded-2xl border border-ink-200 bg-white p-6 dark:border-ink-800 dark:bg-ink-900"
+    >
+              <div className="mb-5 flex items-center gap-3">
+                <span className="font-display text-xs font-bold text-maple-600">
+                  {String(groupIndex + 1).padStart(2, '0')}
+                </span>
+                <h2 className="font-display text-lg font-bold text-navy-900 dark:text-white">{group.category}</h2>
+              </div>
 
-          <motion.div
-            variants={stagger(0.06)}
-            initial="hidden"
-            whileInView="show"
-            viewport={viewport}
-            className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
-          >
-            {group.items.map((item) => (
-              <motion.div key={item.href} variants={fadeUp}>
-                <Link
-                  href={item.href}
-                  className="group flex h-full flex-col rounded-2xl border border-ink-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-maple-200 hover:shadow-lift dark:border-ink-800 dark:bg-ink-900"
-                >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-maple-50 text-maple-600 transition-colors group-hover:bg-maple-gradient group-hover:text-white dark:bg-ink-800">
-                    <Icon name={item.icon} className="h-5 w-5" />
-                  </span>
-                  <h3 className="mt-5 font-display text-lg font-bold text-ink-900 transition-colors group-hover:text-maple-600 dark:text-white">
-                    {item.label}
-                  </h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-500 dark:text-ink-300">{item.desc}</p>
-                  <span className="mt-5 flex items-center gap-2 text-sm font-semibold text-maple-600">
-                    Learn more
+              <div className="space-y-2.5">
+                {group.items.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="group flex items-center gap-3 rounded-xl border border-ink-200 bg-ink-50/50 px-4 py-3 transition-colors hover:border-maple-200 hover:bg-white dark:border-ink-800 dark:bg-ink-950/40 dark:hover:border-maple-900"
+                  >
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-maple-50 text-maple-600 transition-colors group-hover:bg-maple-gradient group-hover:text-white dark:bg-ink-800">
+                      <Icon name={item.icon} className="h-4 w-4" />
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-sm font-bold text-navy-900 transition-colors group-hover:text-maple-600 dark:text-white">
+                        {item.label}
+                      </span>
+                    </span>
                     <Icon
                       name="arrowRight"
-                      className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                      className="h-4 w-4 shrink-0 text-ink-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-maple-600"
                       strokeWidth={2.2}
                     />
-                  </span>
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-        </Section>
-      ))}
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </Section>
     </>
   );
 }

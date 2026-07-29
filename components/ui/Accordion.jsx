@@ -52,8 +52,8 @@ function AccordionItem({ item, isOpen, onToggle }) {
   );
 }
 
-export default function Accordion({ items = [], allowMultiple = false }) {
-  const [open, setOpen] = useState([0]);
+export default function Accordion({ items = [], allowMultiple = false, startClosed = false }) {
+  const [open, setOpen] = useState(startClosed ? [] : [0]);
 
   const toggle = (index) => {
     setOpen((prev) => {
@@ -63,7 +63,7 @@ export default function Accordion({ items = [], allowMultiple = false }) {
   };
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-2.5">
       {items.map((item, index) => (
         <AccordionItem
           key={item.question}

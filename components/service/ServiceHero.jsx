@@ -99,10 +99,10 @@ export default function ServiceHero({
                 <motion.div variants={fadeUp} className="mt-7 flex flex-wrap items-center gap-4">
                   
                <a 
-                    href="#faq"
-                    className="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-colors hover:border-white hover:bg-white/20"
+           href="/#contact"
+                    className="rounded-full bg-red-gradient px-6 py-3 text-sm font-semibold text-white shadow-lift transition-transform hover:scale-[1.02]"
                   >
-                    Read the FAQ
+                    Free Assessment
                   </a>
                   {updated && (
                     <span className="flex items-center gap-2 text-xs font-semibold text-white/60">

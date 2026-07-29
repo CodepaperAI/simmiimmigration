@@ -1,19 +1,14 @@
-import { Fragment } from 'react';
 import Accordion from '@/components/ui/Accordion';
 
 export default function FaqTabs({ groups = [] }) {
   return (
-    <div className="mt-12 space-y-12">
+    <div className="mt-10 space-y-10">
       {groups.map((group) => (
         <div key={group.title}>
-          <h3 className="mb-6 font-display text-xl font-bold text-ink-900 dark:text-white">
+          <h3 className="mb-4 font-display text-xl font-bold text-navy-900 dark:text-white">
             {group.title}
           </h3>
-          <div className="grid gap-x-8 gap-y-4 lg:grid-cols-2">
-            {group.items.map((item) => (
-              <Accordion key={item.q || item.question} items={[item]} allowMultiple />
-            ))}
-          </div>
+          <Accordion items={group.items} allowMultiple startClosed />
         </div>
       ))}
     </div>

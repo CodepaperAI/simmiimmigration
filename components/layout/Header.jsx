@@ -54,25 +54,25 @@ function NavDropdown({ item }) {
               wide ? 'w-[40rem]' : 'w-[23rem]'
             )}
           >
-           <div className="w-64 overflow-hidden rounded-2xl border border-ink-200/80 bg-white/95 p-1.5 shadow-lift backdrop-blur-xl dark:border-ink-800 dark:bg-ink-900/95">
-  {item.children.map((child) => (
-    <Link
-      key={child.label}
-      href={child.href}
-      onClick={() => setOpen(false)}
-      className="group flex items-center gap-2.5 rounded-lg px-3 py-2 transition-colors hover:bg-maple-50 dark:hover:bg-ink-800"
-    >
-      <Icon
-        name={child.icon}
-        className="h-4 w-4 shrink-0 text-maple-600 transition-transform group-hover:translate-x-0.5 dark:text-maple-400"
-        strokeWidth={1.9}
-      />
-      <span className="text-sm font-semibold text-ink-800 transition-colors group-hover:text-maple-600 dark:text-ink-100 dark:group-hover:text-white">
-        {child.label}
-      </span>
-    </Link>
-  ))}
-</div>
+            <div className="w-64 overflow-hidden rounded-2xl border border-ink-200/80 bg-white/95 p-1.5 shadow-lift backdrop-blur-xl dark:border-ink-800 dark:bg-ink-900/95">
+              {item.children.map((child) => (
+                <Link
+                  key={child.label}
+                  href={child.href}
+                  onClick={() => setOpen(false)}
+                  className="group flex items-center gap-2.5 rounded-lg px-3 py-2 transition-colors hover:bg-maple-50 dark:hover:bg-ink-800"
+                >
+                  <Icon
+                    name={child.icon}
+                    className="h-4 w-4 shrink-0 text-maple-600 transition-transform group-hover:translate-x-0.5 dark:text-maple-400"
+                    strokeWidth={1.9}
+                  />
+                  <span className="text-sm font-semibold text-ink-800 transition-colors group-hover:text-maple-600 dark:text-ink-100 dark:group-hover:text-white">
+                    {child.label}
+                  </span>
+                </Link>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -86,102 +86,101 @@ export default function Header() {
 
   return (
     <>
-      {/* Utility bar */}
-      <div className="hidden bg-red-gradient py-2.5 text-white lg:block">
-        <Container className="flex items-center justify-between text-xs">
-          <div className="flex items-center gap-5 font-semibold">
-            <a href={company.phoneHref} className="flex items-center gap-2 transition-opacity hover:opacity-80">
-              <Icon name="phone" className="h-3.5 w-3.5" />
-              {company.phone}
-            </a>
-            <span className="text-white/40">|</span>
-            <a href={company.emailHref} className="flex items-center gap-2 transition-opacity hover:opacity-80">
-              <Icon name="mail" className="h-3.5 w-3.5" />
-              {company.email}
-            </a>
-          </div>
-          <div className="flex items-center gap-5">
-            <span className="font-semibold">Mon–Fri: 9:00 AM - 6:00 PM</span>
-            <a href="/#contact" className="font-semibold transition-opacity hover:opacity-80">Free Assessment</a>
-            <div className="flex items-center gap-3 border-l border-white/25 pl-5">
-              {company.social.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={item.name}
-                  className="transition-opacity hover:opacity-70"
-                >
-                  <Icon name={item.icon} className="h-4 w-4" />
-                </a>
-              ))}
+      {/* Sticky wrapper — red bar + navbar stick together at the top */}
+      <div className="sticky top-0 z-40">
+        {/* Utility bar */}
+        <div className="hidden bg-red-gradient py-2.5 text-white lg:block">
+          <Container className="flex items-center justify-between text-xs">
+            <div className="flex items-center gap-5 font-semibold">
+              <a href={company.phoneHref} className="flex items-center gap-2 transition-opacity hover:opacity-80">
+                <Icon name="phone" className="h-3.5 w-3.5" />
+                {company.phone}
+              </a>
+              <span className="text-white/40">|</span>
+              <a href={company.emailHref} className="flex items-center gap-2 transition-opacity hover:opacity-80">
+                <Icon name="mail" className="h-3.5 w-3.5" />
+                {company.email}
+              </a>
             </div>
-          </div>
-        </Container>
-      </div>
-          
-      <motion.header
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, ease: 'easeOut' }}
-        className={cn(
-          'sticky top-0 z-40 w-full border-b transition-all duration-500',
-          scrolled
-            ? 'border-ink-200 bg-white shadow-soft dark:border-navy-800 dark:bg-navy-950'
-            : 'border-ink-100 bg-white dark:border-navy-900 dark:bg-navy-950'
-        )}
-      >
-        <Container
+            <div className="flex items-center gap-5">
+              <span className="font-semibold">Mon–Fri: 9:00 AM - 6:00 PM</span>
+              <a href="/#contact" className="font-semibold transition-opacity hover:opacity-80">Free Assessment</a>
+              <div className="flex items-center gap-3 border-l border-white/25 pl-5">
+                {company.social.map((item) => (
+               <a   
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={item.name}
+                    className="transition-opacity hover:opacity-70"
+                  >
+                    <Icon name={item.icon} className="h-4 w-4" />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </Container>
+        </div>
+
+        <motion.header
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
           className={cn(
-            'flex items-center justify-between gap-4 transition-all duration-500',
-            scrolled ? 'h-[68px]' : 'h-20'
+            'w-full border-b transition-all duration-500',
+            scrolled
+              ? 'border-ink-200 bg-white shadow-soft dark:border-navy-800 dark:bg-navy-950'
+              : 'border-ink-100 bg-white dark:border-navy-900 dark:bg-navy-950'
           )}
         >
-          <Logo className="shrink-0" />
-
-          {/* Desktop nav — pill container, nothing wraps */}
-          <nav
-            className="hidden items-center gap-1 xl:flex"
-            aria-label="Primary"
-          >
-            {mainNav.map((item) =>
-              item.children ? (
-                <NavDropdown key={item.label} item={item} />
-              ) : (
-                <Link key={item.label} href={item.href} className={linkClass}>
-                  {item.label}
-                </Link>
-              )
+          <Container
+            className={cn(
+              'flex items-center justify-between gap-4 transition-all duration-500',
+              scrolled ? 'h-[68px]' : 'h-20'
             )}
-          </nav>
+          >
+            <Logo className="shrink-0" />
 
-          <div className="flex shrink-0 items-center gap-2.5">
-            <ThemeToggle />
-            <a
-              href={company.phoneHref}
-              className="hidden items-center gap-2 rounded-full border border-ink-200 px-4 py-2 text-[13px] font-semibold text-ink-800 transition-colors hover:border-maple-400 hover:text-maple-600 dark:border-ink-700 dark:text-white dark:hover:border-maple-500 lg:inline-flex"
-            >
-              <Icon name="phone" className="h-4 w-4 text-maple-600 dark:text-maple-500" />
-              Call now
-            </a>
-            <Button href="/#contact" size="sm" className="hidden px-5 sm:inline-flex">
-              Book consultation
-            </Button>
-            <button
-              type="button"
-              onClick={() => setOpen(true)}
-              aria-label="Open menu"
-              aria-expanded={open}
-              aria-controls="mobile-menu"
-              className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full border border-ink-200 text-ink-800 transition-colors hover:border-maple-400 hover:text-maple-600 dark:border-ink-700 dark:text-white xl:hidden"
-            >
-              <span className="block h-0.5 w-4 rounded-full bg-current" />
-              <span className="block h-0.5 w-4 rounded-full bg-current" />
-            </button>
-          </div>
-        </Container>
-      </motion.header>
+            <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary">
+              {mainNav.map((item) =>
+                item.children ? (
+                  <NavDropdown key={item.label} item={item} />
+                ) : (
+                  <Link key={item.label} href={item.href} className={linkClass}>
+                    {item.label}
+                  </Link>
+                )
+              )}
+            </nav>
+
+            <div className="flex shrink-0 items-center gap-2.5">
+              <ThemeToggle />
+              
+            <a    href={company.phoneHref}
+                className="hidden items-center gap-2 rounded-full border border-ink-200 px-4 py-2 text-[13px] font-semibold text-ink-800 transition-colors hover:border-maple-400 hover:text-maple-600 dark:border-ink-700 dark:text-white dark:hover:border-maple-500 lg:inline-flex"
+              >
+                <Icon name="phone" className="h-4 w-4 text-maple-600 dark:text-maple-500" />
+                Call now
+              </a>
+              <Button href="/#contact" size="sm" className="hidden px-5 sm:inline-flex">
+                Book consultation
+              </Button>
+              <button
+                type="button"
+                onClick={() => setOpen(true)}
+                aria-label="Open menu"
+                aria-expanded={open}
+                aria-controls="mobile-menu"
+                className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full border border-ink-200 text-ink-800 transition-colors hover:border-maple-400 hover:text-maple-600 dark:border-ink-700 dark:text-white xl:hidden"
+              >
+                <span className="block h-0.5 w-4 rounded-full bg-current" />
+                <span className="block h-0.5 w-4 rounded-full bg-current" />
+              </button>
+            </div>
+          </Container>
+        </motion.header>
+      </div>
 
       <MobileMenu open={open} onClose={() => setOpen(false)} />
     </>

@@ -2599,7 +2599,7 @@ const servicePages = {
       { label: 'Visitor Visa', href: '/services/visitor-visa' },
     ],
   },
-'offshore-study-permit': {
+'overseas-study-permit': {
     category: 'Study',
     meta: {
       title: 'Offshore Study Permit — Applying From Outside Canada',
@@ -2664,11 +2664,11 @@ const servicePages = {
     },
     related: [
       { label: 'Study Permit', href: '/services/study-permit' },
-      { label: 'Onshore Study Permit', href: '/services/onshore-study-permit' },
+      { label: 'Onshore Study Permit', href: '/services/in-canada-study-permit' },
     ],
   },
 
-  'onshore-study-permit': {
+  'in-canada-study-permit': {
     category: 'Study',
     meta: {
       title: 'Onshore Study Permit — Applying From Inside Canada',
@@ -2737,7 +2737,7 @@ const servicePages = {
     ],
   },
 
-  'study-permit-extension': {
+  'extend-study-permit': {
     category: 'Study',
     meta: {
       title: 'Study Permit Extension in Canada',
@@ -2802,7 +2802,7 @@ const servicePages = {
     },
     related: [
       { label: 'Study Permit', href: '/services/study-permit' },
-      { label: 'Offshore Study Permit', href: '/services/offshore-study-permit' },
+      { label: 'Offshore Study Permit', href: '/services/overseas-study-permit' },
     ],
   },
 };

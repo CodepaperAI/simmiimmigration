@@ -62,20 +62,26 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="lg:col-span-5"
           >
-            <div className="rounded-2xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl lg:p-8">
+          <div className="rounded-2xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl lg:p-8">
               <h2 className="font-display text-2xl font-bold leading-tight text-white">
                 Book Your Immigration Consultation
               </h2>
-              <p className="mt-3 text-sm text-white/75">
-                Speak with Simmi Immigration about your options and next steps.
-              </p>
-              <a
-                href="#contact"
-                className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-red-gradient px-6 py-3.5 font-semibold text-white shadow-lift transition-transform hover:scale-[1.02]"
-              >
-                Book Consultation
-                <Icon name="arrowRight" className="h-4 w-4" />
-              </a>
+              <div className="mt-6 flex flex-col gap-3">
+                
+               <a   href="/#contact"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-red-gradient px-6 py-3.5 font-semibold text-white shadow-lift transition-transform hover:scale-[1.02]"
+                >
+                  Book Consultation
+                  <Icon name="arrowRight" className="h-4 w-4" />
+                </a>
+                
+              <a   href="/#contact"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-6 py-3.5 font-semibold text-white backdrop-blur transition-colors hover:border-white hover:bg-white/20"
+                >
+                  Free Assessment
+                  <Icon name="arrowRight" className="h-4 w-4" />
+                </a>
+              </div>
             </div>
           </motion.div>
         </div>

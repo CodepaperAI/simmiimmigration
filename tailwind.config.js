@@ -69,8 +69,8 @@ module.exports = {
         glow: '0 0 0 1px rgba(210,37,54,0.10), 0 20px 50px -20px rgba(210,37,54,0.30)',
       },
       backgroundImage: {
-        'maple-gradient': 'linear-gradient(135deg, #EA4453 0%, #D22536 55%, #B01B2A 100%)',
-        'red-gradient': 'linear-gradient(135deg, #EA4453 0%, #D22536 55%, #B01B2A 100%)',
+        'maple-gradient': 'linear-gradient(135deg, #B01B2A 0%, #B01B2A 100%)',
+'red-gradient': 'linear-gradient(135deg, #B01B2A 0%, #B01B2A 100%)',
         'navy-gradient': 'linear-gradient(160deg, #002365 0%, #001238 100%)',
         'soft-red': 'linear-gradient(135deg, rgba(210,37,54,0.08) 0%, rgba(210,37,54,0.03) 100%)',
       },

@@ -24,7 +24,7 @@ const FEATURED = [
   },
 ];
 
-const CATEGORY_ORDER = ['Work Permits', 'Permanent Residence', 'Business Visa', 'Super Visa Guides', 'Additional Services'];
+const CATEGORY_ORDER = ['Work Permits', 'Permanent Residence', 'Business Visa', 'Super Visa Guides'];
 
 export default function ServicesIndex({ groups }) {
   const schemas = [

@@ -54,12 +54,12 @@ export default function ServicesIndex({ groups }) {
       />
 
       <Section>
-        <motion.div
+       <motion.div
   variants={stagger(0.06)}
   initial="hidden"
   whileInView="show"
   viewport={viewport}
-  className="gap-6 lg:columns-2 [&>*]:mb-6 [&>*]:break-inside-avoid"
+  className="gap-6 sm:columns-2 lg:columns-3 [&>*]:mb-6 [&>*]:break-inside-avoid"
 >
   {groups.map((group, groupIndex) => (
     <motion.div

@@ -31,7 +31,7 @@ const CORE = {
 const ON_THIS_PAGE = {
   title: 'Homepage Sections',
   links: [
-    { label: 'Complex Case Support', href: '/#complex-cases' },
+  
     { label: 'Services Overview', href: '/#services' },
     { label: 'Why Choose Us', href: '/#why-us' },
     { label: 'Immigration Programs', href: '/#programs' },

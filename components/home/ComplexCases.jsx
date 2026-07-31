@@ -32,7 +32,6 @@ export default function ComplexCases() {
 
         <motion.div variants={stagger(0.1)} initial="hidden" whileInView="show" viewport={viewport} className="order-1 lg:order-2">
           <motion.div variants={fadeUp}>
-            <Badge icon="shield">Complex Case Support</Badge>
           </motion.div>
 
           <motion.h2 variants={fadeUp} className="mt-7 font-display text-display-lg text-ink-900 dark:text-white">

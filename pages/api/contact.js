@@ -70,8 +70,7 @@ export default async function handler(req, res) {
 
   try {
     const { error } = await resend.emails.send({
-      // from: 'Simmi Immigration <noreply@simmiimmigration.ca>',
-      from: 'Simmi Immigration <onboarding@resend.dev>',
+from: `${String(name).replace(/[\r\n]/g, ' ').slice(0, 60)} <noreply@simmiimmigration.com>`,      // from: 'Simmi Immigration <onboarding@resend.dev>',
       // to: 'simmiimmigration@gmail.com',
       to: 'simmiimmigration@gmail.com',
       replyTo: email,

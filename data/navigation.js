@@ -31,7 +31,6 @@ export const mainNav = [
     label: 'Work',
     href: '/services/work-permit',
     children: [
-      { label: 'All Work Permits', href: '/services/work-permit', icon: 'route' },
       { label: 'Closed Work Permit (LMIA)', href: '/services/lmia-work-permit', icon: 'briefcase' },
       { label: 'LMIA Services', href: '/services/lmia-services', icon: 'file' },
       { label: 'Post-Graduation Work Permit', href: '/services/pgwp', icon: 'graduation' },

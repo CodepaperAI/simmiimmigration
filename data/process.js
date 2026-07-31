@@ -1,9 +1,9 @@
 export const processSteps = [
-  { step: '01', title: 'Assessment', description: 'We review your history, status and goals, then tell you plainly which pathway is realistic \u2014 and which is not.' },
-  { step: '02', title: 'Document Preparation', description: 'A tailored checklist, drafted letters, and a submission package built to answer the officer\u2019s questions before they ask.' },
-  { step: '03', title: 'Application Submission', description: 'Forms completed, fees paid, and the file submitted to IRCC under our regulated representation.' },
-  { step: '04', title: 'Processing', description: 'Biometrics, medicals and additional requests handled as they land. You are never guessing what happens next.' },
-  { step: '05', title: 'Review', description: 'We monitor status, order GCMS notes where useful, and respond to any procedural fairness letter on time.' },
-  { step: '06', title: 'Decision', description: 'The decision arrives with context: what it means, what it changes, and what your options are.' },
-  { step: '07', title: 'Approval', description: 'Passport request, port of entry preparation, landing, and your first weeks in Canada.' },
+  { step: '01', icon: 'search', title: 'Assessment', description: 'We assess your profile and eligibility.' },
+  { step: '02', icon: 'file', title: 'Document Preparation', description: 'We prepare and organize your documents.' },
+  { step: '03', icon: 'list', title: 'Application Submission', description: 'We submit your application accurately and on time.' },
+  { step: '04', icon: 'settings', title: 'Processing', description: 'We monitor your application and keep you updated.' },
+  { step: '05', icon: 'check', title: 'Review', description: 'Authorities review and verify your application.' },
+  { step: '06', icon: 'shield', title: 'Decision', description: 'A decision is made on your application.' },
+  { step: '07', icon: 'plane', title: 'Approval', description: 'Receive your visa or PR and start your journey to Canada.' },
 ];

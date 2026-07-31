@@ -40,13 +40,13 @@ export default function FormModal({ open, onClose }) {
             className="relative my-auto w-full max-w-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
+           <button
               type="button"
               onClick={onClose}
               aria-label="Close"
-              className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-navy-900 shadow-soft transition-colors hover:bg-white dark:bg-ink-800 dark:text-white"
+              className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-2xl font-light leading-none text-navy-900 shadow-soft transition-colors hover:bg-white dark:bg-ink-800 dark:text-white"
             >
-              <Icon name="close" className="h-4 w-4" strokeWidth={2.4} />
+              &times;
             </button>
             <FreeAssessmentForm />
           </motion.div>

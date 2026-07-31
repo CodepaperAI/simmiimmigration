@@ -70,7 +70,9 @@ export default async function handler(req, res) {
 
   try {
     const { error } = await resend.emails.send({
-      from: 'Simmi Immigration <noreply@simmiimmigration.ca>',
+      // from: 'Simmi Immigration <noreply@simmiimmigration.ca>',
+      from: 'Simmi Immigration <onboarding@resend.dev>',
+      // to: 'simmiimmigration@gmail.com',
       to: 'simmiimmigration@gmail.com',
       replyTo: email,
       subject: `New consultation request — ${name}`,

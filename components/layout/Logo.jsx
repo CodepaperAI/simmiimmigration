@@ -5,7 +5,7 @@ import cn from '@/utils/cn';
 export default function Logo({ className, imgClassName }) {
   return (
     <Link
-      href="/#top"
+      href="/"
       className={cn('group inline-flex items-center', className)}
       aria-label={`${company.name} home`}
     >

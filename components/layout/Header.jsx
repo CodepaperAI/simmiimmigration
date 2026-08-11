@@ -155,7 +155,7 @@ export default function Header() {
             </nav>
 
             <div className="flex shrink-0 items-center gap-2.5">
-              <ThemeToggle />
+              {/* <ThemeToggle /> */}
               
             <a    href={company.phoneHref}
                 className="hidden items-center gap-2 rounded-full border border-ink-200 px-4 py-2 text-[13px] font-semibold text-ink-800 transition-colors hover:border-maple-400 hover:text-maple-600 dark:border-ink-700 dark:text-white dark:hover:border-maple-500 lg:inline-flex"

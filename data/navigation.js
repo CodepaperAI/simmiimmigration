@@ -1,5 +1,5 @@
 export const mainNav = [
-  { label: 'Home', href: '/#top' },
+  { label: 'Home', href: '/' },
   {
     label: 'Super Visa',
     href: '/services/super-visa',
@@ -79,7 +79,7 @@ export const mainNav = [
 
 export const footerLinks = {
   quickLinks: [
-    { label: 'Home', href: '/#top' },
+    { label: 'Home', href: '/' },
     { label: 'All Services', href: '/services' },
     { label: 'Why Choose Us', href: '/#why-us' },
     { label: 'Our Process', href: '/#process' },

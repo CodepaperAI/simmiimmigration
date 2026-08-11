@@ -14,7 +14,7 @@ const superVisa = {
     intro:
       'A Super Visa helps eligible parents and grandparents visit their family in Canada for longer stays. Simmi Immigration helps you prepare a clear, complete and well-organized application package.',
     image:
-      'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1200&q=75',
+      'https://images.unsplash.com/photo-1516307365426-bea591f05011?auto=format&fit=crop&w=1200&q=75',
     imageAlt: 'Multi-generational family sharing a meal together in Canada',
   },
 

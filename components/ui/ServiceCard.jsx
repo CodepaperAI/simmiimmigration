@@ -19,7 +19,7 @@ export default function ServiceCard({ service }) {
         href={`/services/${service.slug}`}
         className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-maple-600 dark:text-maple-400"
       >
-        Discuss this service
+        Learn More
         <Icon name="arrowRight" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
       </Link>
     </Card>

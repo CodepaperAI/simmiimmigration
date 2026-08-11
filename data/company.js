@@ -27,7 +27,7 @@ export const company = {
     { days: 'Sunday', time: 'Closed' },
   ],
   openingHoursSpec: 'Mo-Fr 09:00-18:00',
-  rating: { value: '5.0', count: 128 },
+  rating: { value: '5.0' },
   social: [
     { name: 'Facebook', href: 'https://www.simmiimmigration.com/#', icon: 'facebook' },
     { name: 'LinkedIn', href: 'https://www.simmiimmigration.com/#', icon: 'linkedin' },

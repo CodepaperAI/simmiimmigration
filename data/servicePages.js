@@ -28,7 +28,7 @@ const IMG = {
   city: 'https://images.unsplash.com/photo-1519832979-6fa011b87667?auto=format&fit=crop&w=1200&q=75',
   team: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=75',
   insurance:
-    'https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?auto=format&fit=crop&w=1200&q=75',
+  'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=75',
 };
 
 const DISCLAIMER =
